@@ -19,4 +19,16 @@
     </div>
   </div>
 </body>
+<!-- TODO: Play with script position -->
+<script>
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  card.addEventListener('click', function () {
+    console.log(this);        
+    alert("gira!");
+  });
+});
+</script>
+
 </html>
