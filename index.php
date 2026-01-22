@@ -25,8 +25,7 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
   card.addEventListener('click', function () {
-    console.log(this);        
-    alert("gira!");
+    card.style.backgroundImage = "url('assets/heraclio.jpeg')";
   });
 });
 </script>
