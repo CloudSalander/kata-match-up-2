@@ -13,7 +13,7 @@
         <?php
             define('CARDS',16);
             for($i = 0; $i < CARDS; ++$i) { 
-              echo '<div class="card"></div>';
+              echo '<div class="card" data-flipped="false"></div>';
           } 
         ?>
     </div>
@@ -25,7 +25,16 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
   card.addEventListener('click', function () {
-    card.style.backgroundImage = "url('assets/heraclio.jpeg')";
+    let bg = "";
+    if(this.dataset.flipped == "false") {
+      bg = "url('assets/heraclio.jpeg')"; 
+      this.dataset.flipped = "true";
+    }
+    else {
+      bg = "url('assets/naipe.jpg')";
+      this.dataset.flipped = "false";
+    } 
+    card.style.backgroundImage = bg;
   });
 });
 </script>
