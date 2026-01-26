@@ -25,16 +25,11 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
   card.addEventListener('click', function () {
-    let bg = "";
-    if(this.dataset.flipped == "false") {
-      bg = "url('assets/heraclio.jpeg')"; 
-      this.dataset.flipped = "true";
-    }
-    else {
-      bg = "url('assets/naipe.jpg')";
-      this.dataset.flipped = "false";
-    } 
-    card.style.backgroundImage = bg;
+    const isFlipped = card.dataset.flipped === "true";
+    card.dataset.flipped = isFlipped ? "false" : "true";
+    card.style.backgroundImage = isFlipped 
+      ? "url('assets/naipe.jpg')" 
+      : "url('assets/heraclio.jpeg')";
   });
 });
 </script>
