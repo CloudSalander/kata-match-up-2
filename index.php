@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <div id="points-row">0 points</div>
+    <div id="counter">0</div>
     <div id="board">
         <?php
             define('CARDS',16);
@@ -32,6 +32,16 @@ cards.forEach(card => {
       : "url('assets/heraclio.jpeg')";
   });
 });
+
+let seconds = 0;
+
+const counterEl = document.getElementById('counter');
+
+setInterval(() => {
+  seconds++;
+  counterEl.textContent = seconds;
+}, 1000);
+
 </script>
 
 </html>
